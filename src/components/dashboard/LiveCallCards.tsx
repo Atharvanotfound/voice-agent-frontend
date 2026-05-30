@@ -92,7 +92,7 @@ export function LiveCallCards() {
       <Card>
         <div className="text-xs uppercase tracking-wider text-muted-foreground">Caller Information</div>
         <div className="mt-4 space-y-3">
-          <Row icon={<User2 className="h-4 w-4" />} label="Caller" value={currentCall?.from || "—"} />
+          <Row icon={<User2 className="h-4 w-4" />} label="Caller" value={currentCall?.from ? currentCall.from.slice(0, -4).replace(/\d/g, "X") + currentCall.from.slice(-4) : "—"} />
           <Row icon={<Phone className="h-4 w-4" />} label="Call SID" value={currentCall?.callSid?.slice(-8) || "—"} />
           <Row icon={<Clock className="h-4 w-4" />} label="Duration" value={currentCall ? formatTime(elapsed) : "—"} />
           <Row icon={<Globe2 className="h-4 w-4" />} label="Language" value={currentCall ? langLabel[currentCall.language] || currentCall.language : "—"} />

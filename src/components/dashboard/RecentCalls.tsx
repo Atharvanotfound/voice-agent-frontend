@@ -65,7 +65,7 @@ export function RecentCalls() {
                     <tr key={i} className="border-b border-white/5 transition hover:bg-secondary/30">
                       <td className="px-5 py-3.5">
                         <div className="font-medium font-mono text-xs">{r.callSid?.slice(-8) || "Unknown"}</div>
-                        <div className="text-xs text-muted-foreground">{r.from || "Unknown"}</div>
+                        <div className="text-xs text-muted-foreground">{r.from ? r.from.slice(0, -4).replace(/\d/g, "X") + r.from.slice(-4) : "Unknown"}</div>
                       </td>
                       <td className="px-5 py-3.5">
                         <span className="rounded-full border bg-secondary/40 px-2.5 py-1 text-xs">
